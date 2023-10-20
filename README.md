@@ -2,11 +2,11 @@ APP_ID
 
 APP_SECRET。 //
 
-BIRTHDAY  //生日
+BIRTHDAY  //生日 12-07
 
-CITY   ///位置
+CITY   ///位置 临汾
 
-START_DATE  // 相识时间
+START_DATE  // 相识时间 2023-10-17
 
 TEMPLATE_ID。//模版id
 
