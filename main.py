@@ -67,7 +67,7 @@ data = {
   "temperature":{"value":temperature, "color":get_random_color()},
   "min_temperature":{"value":min_temperature, "color":get_random_color()},
   "love_days":{"value":get_count(), "color":get_random_color()},
-  "birthday_left":{"value":get_birthday(), "color":get_random_color()},
+  "birthday_left":{"value": "距离你的生日还有3天", "color":get_random_color()},
   "words":{"value":get_words(), "color":get_random_color()},
   "dujitang":{"value":get_dujitang(), "color":get_random_color()},
   "pengyouquan":{"value":get_pengyouquan(), "color":get_random_color()},
