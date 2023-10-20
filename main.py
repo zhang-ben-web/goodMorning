@@ -57,7 +57,7 @@ def get_random_color():
 
 
 client = WeChatClient(app_id, app_secret)
-current_date = str(date.today().year + "-" + str(date.today().month + "-" + str(date.today().day
+current_date = str(date.today().year) + "-" + str(date.today().month) + "-" + str(date.today().day)
 wm = WeChatMessage(client)
 wea, temperature, min_temperature = get_weather()
 data = {
