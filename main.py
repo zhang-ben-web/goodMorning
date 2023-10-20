@@ -1,4 +1,5 @@
-from datetime import date, datetime
+from datetime import date
+import datetime
 import math
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage, WeChatTemplate
@@ -57,7 +58,7 @@ def get_random_color():
 
 
 client = WeChatClient(app_id, app_secret)
-current_date = datetime。datetime.now()
+current_date = datetime。datetime.now().date()
 wm = WeChatMessage(client)
 wea, temperature, min_temperature = get_weather()
 data = {
