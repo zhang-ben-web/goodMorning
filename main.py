@@ -61,13 +61,13 @@ current_date = str(date.today().year + "-" + str(date.today().month + "-" + str(
 wm = WeChatMessage(client)
 wea, temperature, min_temperature = get_weather()
 data = {
-  "date": {"value": current_date.year, "color":get_random_color()},
+  "date": {"value": current_date, "color":get_random_color()},
   "city": {"value": city, "color":get_random_color()},
   "weather":{"value":wea, "color":get_random_color()},
   "temperature":{"value":temperature, "color":get_random_color()},
   "min_temperature":{"value":min_temperature, "color":get_random_color()},
   "love_days":{"value":get_count(), "color":get_random_color()},
-  "birthday_left":{"value": "距离你的生日还有3天", "color":get_random_color()},
+  "birthday_left":{"value": get_birthday(), "color":get_random_color()},
   "words":{"value":get_words(), "color":get_random_color()},
   "dujitang":{"value":get_dujitang(), "color":get_random_color()},
   "pengyouquan":{"value":get_pengyouquan(), "color":get_random_color()},
