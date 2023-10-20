@@ -55,22 +55,30 @@ def get_pengyouquan():
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
+def generate_random_color():
+    red = random.randint(0, 255)
+    green = random.randint(0, 255)
+    blue = random.randint(0, 255)
+    color = "#{:02x}{:02x}{:02x}".format(red, green, blue)
+    return color
+
+random_color = generate_random_color()
 
 client = WeChatClient(app_id, app_secret)
 current_date = str(date.today().year) + "-" + str(date.today().month) + "-" + str(date.today().day)
 wm = WeChatMessage(client)
 wea, temperature, min_temperature = get_weather()
 data = {
-  "date": {"value": current_date, "color":get_random_color()},
-  "city": {"value": city, "color":get_random_color()},
-  "weather":{"value":wea, "color":get_random_color()},
-  "temperature":{"value":temperature, "color":get_random_color()},
-  "min_temperature":{"value":min_temperature, "color":get_random_color()},
-  "love_days":{"value":get_count(), "color":get_random_color()},
-  "birthday_left":{"value": get_birthday(), "color":get_random_color()},
-  "words":{"value":get_words(), "color":get_random_color()},
-  "dujitang":{"value":get_dujitang(), "color":get_random_color()},
-  "pengyouquan":{"value":get_pengyouquan(), "color":get_random_color()},
+  "date": {"value": current_date, "color": random_color},
+  "city": {"value": city, "color": random_color},
+  "weather":{"value":wea, "color": generate_random_color()},
+  "temperature":{"value":temperature, "color": random_color},
+  "min_temperature":{"value":min_temperature, "color": random_color},
+  "love_days":{"value":get_count(), "color": generate_random_color()},
+  "birthday_left":{"value": get_birthday(), "color": generate_random_color()},
+  "words":{"value":get_words(), "color": generate_random_color()},
+  "dujitang":{"value":get_dujitang(), "color": generate_random_color()},
+  "pengyouquan":{"value":get_pengyouquan(), "color": generate_random_color()},
 }
 res = wm.send_template(user_id, template_id, data)
 print(res)
