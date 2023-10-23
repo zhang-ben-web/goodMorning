@@ -4,7 +4,7 @@ APP_SECRET。 //
 
 BIRTHDAY  //生日 12-07
 
-CITY   ///位置 临汾
+CITY   ///位置 临汾/ 101100710
 
 START_DATE  // 相识时间 2023-10-17
 
