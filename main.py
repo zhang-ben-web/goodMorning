@@ -19,10 +19,11 @@ template_id = os.environ["TEMPLATE_ID"]
 
 
 def get_weather():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
+  url = "https://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=" + city
   res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp']), math.floor(weather['low'])
+  weather = res['today']
+
+  return weather['weatherEnd'], math.floor(weather['tempMax']), math.floor(weather['tempMin']), weather["date"]
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -65,9 +66,9 @@ def generate_random_color():
 random_color = generate_random_color()
 
 client = WeChatClient(app_id, app_secret)
-current_date = str(date.today().year) + "-" + str(date.today().month) + "-" + str(date.today().day)
+
 wm = WeChatMessage(client)
-wea, temperature, min_temperature = get_weather()
+wea, temperature, min_temperature, current_date = get_weather()
 data = {
   "date": {"value": current_date, "color": random_color},
   "city": {"value": city, "color": random_color},
