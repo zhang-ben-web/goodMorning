@@ -69,7 +69,7 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature, min_temperature, current_date = get_weather()
-text_color = "当前位置：临汾" + "\n" + "天气：" + {{weather}}+ "\n" + "温度：" + {{min_temperature}} + "℃ ~" + {{temperature}} + "℃" + "\n" + "今天是我们相识的第"+{{love_days}}+ "天" + "\n" + "距离你的生日还有" + {{birthday_left}}+ "天" + "\n" + {{dujitang}}+ "\n" + {{words}}+ "\n" +{{pengyouquan}}
+text_color = "位置：临汾" + "\n" + "天气：" + {{wea}}+ "\n" + "温度：" + {{min_temperature}} + "℃ ~" + {{temperature}} + "℃" + "\n" + "今天是我们相识的第"+{{get_count()}}+ "天" + "\n" + "距离你的生日还有" + {{get_birthday()}}+ "天" + "\n" + {{get_dujitang()}}+ "\n" + {{get_words()}}+ "\n" +{{get_pengyouquan()}}
 data = {
   "date": {"value": current_date, "color": random_color},
   "text_color" : {"value": text_color},
