@@ -71,7 +71,7 @@ wm = WeChatMessage(client)
 wea, temperature, min_temperature, current_date = get_weather()
 data = {
   "date": {"value": current_date, "color": random_color},
-  "city": {"value": "临汾", "color": random_color},
+  "city": {"value": "北京 昌平", "color": random_color},
   "weather":{"value":wea, "color": generate_random_color()},
   "temperature":{"value":temperature, "color": "#fc5531"},
   "min_temperature":{"value":min_temperature, "color": "#388bfd"},
