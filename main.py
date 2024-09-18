@@ -6,7 +6,7 @@ import requests
 import os
 import random
 
-today = datetime.now()
+today = datetime.datetime.now()
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
@@ -69,13 +69,15 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature, min_temperature, current_date = get_weather()
+
+love_days = get_count()
 data = {
   "date": {"value": current_date, "color": random_color},
   "city": {"value": "北京 昌平", "color": random_color},
   "weather":{"value":wea, "color": generate_random_color()},
   "temperature":{"value":temperature, "color": "#fc5531"},
   "min_temperature":{"value":min_temperature, "color": "#388bfd"},
-  "love_days":{"value":get_count(), "color": generate_random_color()},
+  "love_days":{"value": love_days, "color": generate_random_color()},
   "birthday_left":{"value": get_birthday(), "color": generate_random_color()},
   "words":{"value":get_words(), "color": generate_random_color()},
   "dujitang":{"value":get_dujitang(), "color": generate_random_color()},
