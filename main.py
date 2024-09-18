@@ -70,7 +70,7 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, temperature, min_temperature, current_date = get_weather()
 
-love_days = (today -datetime(2024,2,16)).days
+love_days = (today -datetime.strptime("2024-2-16", "%Y-%m-%d")).days
 data = {
   "date": {"value": current_date, "color": random_color},
   "city": {"value": "北京 昌平", "color": random_color},
